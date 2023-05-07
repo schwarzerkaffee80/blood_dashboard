@@ -17,7 +17,6 @@ st.set_page_config(
 def get_time_series(filename) -> pd.DataFrame:
     return pd.read_excel(filename)
 
-@st.cache_data
 units = {'CRP':'mg/dl', 'Interleukin 6':'pg/ml', 'Eiweiss':'g/dl', 'Leukocyten':'G/l', 
          'Erythrocyten':'T/l', 'Hämoglobin':'g/dl', 'Hämatokrit':'l/l', 'Thrombocyten':'G/l'}
 
