@@ -47,8 +47,13 @@ with st.sidebar:
             valid_colnames_2 = valid_colnames.drop(val_name)
             val_name2 = st.selectbox("Wähle zweiten Blutwert", valid_colnames_2)
             meta2 = units.loc[val_name2]
+            thresh = False
         
         chemo = st.checkbox("Zeige Chemo Fenster")
+
+        if not second_ax:
+            thresh = st.checkbox("Zeige Normalbereich")
+        
 
 
 #define main window
@@ -58,6 +63,9 @@ fig = px.line(data_frame=df, y=val_name, x=tstp_name, labels=val_name)
 fig['data'][0]['showlegend']=True
 fig['data'][0]['name']=val_name
 subfig.add_traces(fig.data)
+if thresh:
+    subfig.add_hrect(y0 = meta.untereGrenze,y1 = meta.obereGrenze, 
+                     line_width=0, fillcolor="red", opacity=0.2, annotation_text="Normbereich")
 
 subfig.update_layout(
   title= "Sophie's Reise",
