@@ -59,7 +59,7 @@ with st.sidebar:
 #define main window
 subfig = make_subplots()
 #subfig.add_trace(go.Scatter(x=df.index, y=df[val_name]), row=1, col=1)
-fig = px.line(data_frame=df, y=val_name, x=tstp_name, labels=val_name)
+fig = px.line(data_frame=df, y=val_name, x=tstp_name, labels=val_name, markers = True)
 fig['data'][0]['showlegend']=True
 fig['data'][0]['name']=val_name
 subfig.add_traces(fig.data)
@@ -79,7 +79,7 @@ if second_ax:
     fig2 = px.line(data_frame=df, y=val_name2, x=tstp_name)
     fig2['data'][0]['showlegend']=True
     fig2['data'][0]['name']=val_name2
-    fig2.update_traces(line_color = "#4C0013", yaxis="y2")
+    fig2.update_traces(line_color = "#4C0013", yaxis="y2", markes = True)
 
     subfig.add_traces(fig.data + fig2.data)
     subfig.update_yaxes(title_text = val_name + ' ' + meta.Einheit, secondary_y=False)
