@@ -76,10 +76,10 @@ subfig.update_layout(
 if second_ax:          
     subfig = make_subplots(specs=[[{"secondary_y": True}]])
 
-    fig2 = px.line(data_frame=df, y=val_name2, x=tstp_name)
+    fig2 = px.line(data_frame=df, y=val_name2, x=tstp_name, markes = True)
     fig2['data'][0]['showlegend']=True
     fig2['data'][0]['name']=val_name2
-    fig2.update_traces(line_color = "#4C0013", yaxis="y2", markes = True)
+    fig2.update_traces(line_color = "#4C0013", yaxis="y2")
 
     subfig.add_traces(fig.data + fig2.data)
     subfig.update_yaxes(title_text = val_name + ' ' + meta.Einheit, secondary_y=False)
