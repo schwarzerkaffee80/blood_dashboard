@@ -76,7 +76,7 @@ subfig.update_layout(
 if second_ax:          
     subfig = make_subplots(specs=[[{"secondary_y": True}]])
 
-    fig2 = px.line(data_frame=df, y=val_name2, x=tstp_name, markes = True)
+    fig2 = px.line(data_frame=df, y=val_name2, x=tstp_name, markers = True)
     fig2['data'][0]['showlegend']=True
     fig2['data'][0]['name']=val_name2
     fig2.update_traces(line_color = "#4C0013", yaxis="y2")
