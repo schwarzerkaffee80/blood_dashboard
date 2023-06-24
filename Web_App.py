@@ -92,4 +92,6 @@ if second_ax:
 if chemo:
     subfig.add_vrect(x0=pd.to_datetime("2023-04-20T12:00:00"), x1=pd.to_datetime("2023-04-27T12:00:00"), line_width=0, fillcolor="red", opacity=0.2)
     subfig.add_vrect(x0=pd.to_datetime("2023-05-24T8:00:00"), x1=pd.to_datetime("2023-05-28T23:00:00"), line_width=0, fillcolor="red", opacity=0.2)
+    subfig.add_vrect(x0=pd.to_datetime("2023-06-21T8:00:00"), x1=pd.to_datetime("2023-06-25T23:00:00"), line_width=0, fillcolor="red", opacity=0.2)
+
 st.plotly_chart(subfig, theme=None,  use_container_width=True)
